@@ -1,0 +1,7 @@
+{
+    "moodle-atto_brightcove-button": {
+        "requires": [
+            "moodle-editor_atto-plugin"
+        ]
+    }
+}
