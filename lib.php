@@ -35,6 +35,8 @@ function atto_brightcove_strings_for_js() {
         array(
             'insertvideo',
             'insert',
+            'select',
+            'videoid',
             'width',
             'height',
         ),

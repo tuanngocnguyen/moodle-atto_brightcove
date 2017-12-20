@@ -26,9 +26,9 @@
 defined('MOODLE_INTERNAL') || die;
 
 $string['pluginname'] = 'Brightcove';
+$string['videoid'] = 'Brightcove video ID';
 $string['width'] = 'Width';
 $string['height'] = 'Height';
 $string['insertvideo'] = 'Insert Brightcove video';
 $string['insert'] = 'Insert';
-
-
+$string['select'] = 'Select Brightcove video';
