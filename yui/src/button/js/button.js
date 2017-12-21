@@ -32,6 +32,7 @@ var COMPONENTNAME = 'atto_brightcove',
     TAG = 'brightcove-video',
     CSS = {
         BUTTON: 'atto_brightcove_submit',
+        BUTTON_SELECT: 'atto_brightcove_select',
         FORM:   'atto_brightcove_form',
         VIDEOID: 'videoid',
         WIDTH:   'width',
@@ -40,6 +41,7 @@ var COMPONENTNAME = 'atto_brightcove',
     SELECTORS = {
         FORM: '.atto_brightcove_form',
         SUBMIT: '.atto_brightcove_submit',
+        SELECT: '.atto_brightcove_select',
         VIDEOID: '.videoid',
         WIDTH:   '.width',
         HEIGHT:  '.height'
@@ -48,6 +50,7 @@ var COMPONENTNAME = 'atto_brightcove',
         '<form class="atto_form {{CSS.FORM}}">' +
         '<label for="{{CSS.VIDEOID}}">{{get_string "videoid" component}}</label>' +
         '<input class="{{CSS.VIDEOID}}" id="{{CSS.VIDEOID}}" name="{{CSS.VIDEOID}}" />' +
+        '<button class="{{CSS.BUTTON_SELECT}}" name="{{CSS.BUTTON_SELECT}}" type="button">{{get_string "select" component}}</button>' +
         '<label for="{{CSS.WIDTH}}">{{get_string "width" component}}</label>' +
         '<input class="{{CSS.WIDTH}}" id="{{CSS.WIDTH}}" name="{{CSS.WIDTH}}" />' +
         '<label for="{{CSS.HEIGHT}}">{{get_string "height" component}}</label>' +
@@ -215,6 +218,7 @@ Y.namespace('M.atto_brightcove').Button = Y.Base.create('button', Y.M.editor_att
         }));
 
         this._content.one(SELECTORS.SUBMIT).on('click', this._insertVideo, this);
+        // this._content.one(SELECTORS.SELECT).on('click', this._selectVideoDialog, this);
 
         return this._content;
     },
@@ -222,7 +226,7 @@ Y.namespace('M.atto_brightcove').Button = Y.Base.create('button', Y.M.editor_att
     /**
      * Insert the Video into the editor.
      *
-     * @method _insertChar
+     * @method _insertVideo
      * @param {EventFacade} e
      * @private
      */
@@ -256,5 +260,17 @@ Y.namespace('M.atto_brightcove').Button = Y.Base.create('button', Y.M.editor_att
         this.editor.focus();
         this.get('host').insertContentAtFocusPoint(html);
         this.markUpdated();
+    },
+
+    /**
+     * Run a dialog window for selecting video.
+     *
+     * @method _selectVideoDialog
+     * @param {EventFacade} e
+     * @private
+     */
+    _selectVideoDialog: function(e) {
+        e.preventDefault();
+        alert('This feature is not implemented yet');
     }
 });
