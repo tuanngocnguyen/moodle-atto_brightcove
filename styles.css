@@ -1,5 +1,22 @@
 .editor_atto_content_wrap brightcove-video {
-    padding: 15px; background-color: #EEEEEE; display: inline-block;
     cursor: context-menu;
+    position: relative;
+}
+.editor_atto_content_wrap brightcove-video::before {
+    position: absolute;
+    display: block;
+    content: "Edit";
+    left: 0;
+    top: 0;
+    height: 25px;
+    width: 80px;
+    z-index: 100;
+    text-align: center;
+    padding: 5px;
+    color: #fff;
+    background-color: #00acdf;
+}
+.editor_atto_content_wrap .videoWrapper iframe {
+    pointer-events: none;
 }
 

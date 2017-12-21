@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version Plugin lib.
+ * Plugin lib functions.
  *
  * @package   atto_brightcove
  * @author    Dmitrii Metelkin (dmitriim@catalyst-au.net)
