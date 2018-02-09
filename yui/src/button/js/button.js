@@ -77,7 +77,11 @@ Y.namespace('M.atto_brightcove').Button = Y.Base.create('button', Y.M.editor_att
      */
     _currentSelection: null,
 
-    initializer: function() {
+    initializer: function(config) {
+        if (config.disabled) {
+            return;
+        }
+
         this.editor.delegate('click', this._handleClick, 'brightcove-video', this);
         this.editor.delegate('dblclick', this._displayDialogue, 'brightcove-video', this);
 

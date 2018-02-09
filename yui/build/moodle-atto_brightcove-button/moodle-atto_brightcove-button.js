@@ -52,7 +52,7 @@ var COMPONENTNAME = 'atto_brightcove',
         '<form class="atto_form {{CSS.FORM}}">' +
         '<label for="{{CSS.VIDEOID}}">{{get_string "videoid" component}}</label>' +
         '<input class="{{CSS.VIDEOID}}" id="{{CSS.VIDEOID}}" name="{{CSS.VIDEOID}}" />' +
-        // '<button class="{{CSS.BUTTON_SELECT}}" name="{{CSS.BUTTON_SELECT}}" type="button">{{get_string "select" component}}</button>' +
+        '<button class="{{CSS.BUTTON_SELECT}}" name="{{CSS.BUTTON_SELECT}}" type="button">{{get_string "select" component}}</button>' +
         '<label for="{{CSS.WIDTH}}">{{get_string "width" component}}</label>' +
         '<input class="{{CSS.WIDTH}}" id="{{CSS.WIDTH}}" name="{{CSS.WIDTH}}" />' +
         '<label for="{{CSS.HEIGHT}}">{{get_string "height" component}}</label>' +
@@ -79,7 +79,11 @@ Y.namespace('M.atto_brightcove').Button = Y.Base.create('button', Y.M.editor_att
      */
     _currentSelection: null,
 
-    initializer: function() {
+    initializer: function(config) {
+        if (config.disabled) {
+            return;
+        }
+
         this.editor.delegate('click', this._handleClick, 'brightcove-video', this);
         this.editor.delegate('dblclick', this._displayDialogue, 'brightcove-video', this);
 

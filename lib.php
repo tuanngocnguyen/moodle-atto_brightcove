@@ -43,3 +43,22 @@ function atto_brightcove_strings_for_js() {
         'atto_brightcove'
     );
 }
+
+/**
+ * Return the js params required for this module.
+ *
+ * @return array of additional params to pass to javascript init function for this module.
+ */
+function atto_brightcove_params_for_js($elementid, $options, $fpoptions) {
+    global $COURSE;
+
+    $coursecontext = context_course::instance($COURSE->id);
+    $params = array();
+    $params['disabled'] = false;
+
+    if (!has_capability('atto/brightcove:visible', $coursecontext)) {
+        $params['disabled'] = true;
+    }
+
+    return $params;
+}

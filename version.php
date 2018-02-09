@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2017121900;      // The current plugin version (Date: YYYYMMDDXX).
+$plugin->version   = 2018020901;      // The current plugin version (Date: YYYYMMDDXX).
 $plugin->requires  = 2017051500;      // Requires Moodle 3.3 or later.
 $plugin->component = "atto_brightcove";
 $plugin->dependencies = [

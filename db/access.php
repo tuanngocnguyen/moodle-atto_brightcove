@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings.
+ * Plugin capabilities.
  *
  * @package   atto_brightcove
  * @author    Dmitrii Metelkin (dmitriim@catalyst-au.net)
@@ -23,13 +23,19 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Brightcove';
-$string['videoid'] = 'Brightcove video ID';
-$string['width'] = 'Width';
-$string['height'] = 'Height';
-$string['insertvideo'] = 'Insert Brightcove video';
-$string['insert'] = 'Insert';
-$string['select'] = 'Select Brightcove video';
-$string['brightcove:visible'] = 'Brightcove button visible';
+$capabilities = array(
+
+    'atto/brightcove:visible' => array(
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => array(
+            'manager' => CAP_ALLOW,
+            'coursecreator' => CAP_ALLOW,
+            'teacher' => CAP_ALLOW,
+            'editingteacher' => CAP_ALLOW,
+            'student' => CAP_PROHIBIT,
+        )
+    ),
+);
