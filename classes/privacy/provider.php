@@ -15,23 +15,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Strings.
+ * Privacy Subsystem implementation.
  *
- * @package   atto_brightcove
- * @author    Dmitrii Metelkin (dmitriim@catalyst-au.net)
- * @copyright Catalyst IT
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package atto_brightcove
+ * @author  Nathan Nguyen <nathannguyen@catalyst-au.net>
+ * @copyright  Catalyst IT
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
+namespace atto_brightcove\privacy;
 
-$string['pluginname'] = 'Brightcove';
-$string['videoid'] = 'Brightcove video ID';
-$string['width'] = 'Width';
-$string['height'] = 'Height';
-$string['insertvideo'] = 'Insert Brightcove video';
-$string['insert'] = 'Insert';
-$string['select'] = 'Select Brightcove video';
-$string['brightcove:visible'] = 'Brightcove button visible';
-// Privacy.
-$string['privacy:metadata'] = 'This plugin does not store personal data.';
+defined('MOODLE_INTERNAL') || die();
+
+class provider implements \core_privacy\local\metadata\null_provider {
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}
